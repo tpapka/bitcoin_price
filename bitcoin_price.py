@@ -6,12 +6,12 @@ search = requests.get("https://finance.yahoo.com/quote/BTC-USD?p=BTC-USD")
 soup = bs(search.text, "html.parser")
 bitcoin_price = soup.find("span", class_ = "Trsdu(0.3s) Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(b)")
 try:
-  bp = bitcoin_price.get_text().split()
-  t = datetime.datetime.now()
-  t = str(t.time())[:-7] + " -"
-  print(t, "$" + bp[0])
+    bp = bitcoin_price.get_text().split()
+    t = datetime.datetime.now()
+    t = str(t.time())[:-7] + " -"
+    print(t, "$" + bp[0])
 except:
-  pass
+    pass
 
 
 # Google Version
@@ -19,12 +19,12 @@ search = requests.get("https://www.google.com/search?q=bitcoin+price")
 soup = bs(search.text, "html.parser")
 bitcoin_price = soup.find(class_ = "J7UKTe")
 try:
-  bp = bitcoin_price.get_text().split()
-  t = datetime.datetime.now()
-  t = str(t.time())[:-7] + " -"
-  print(t, "$" + bp[3])
+    bp = bitcoin_price.get_text().split()
+    t = datetime.datetime.now()
+    t = str(t.time())[:-7] + " -"
+    print(t, "$" + bp[3])
 except:
-  pass
+    pass
 
 
 # Run it every three minutes as PowerShell function
